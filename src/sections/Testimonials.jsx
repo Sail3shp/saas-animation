@@ -7,7 +7,7 @@ const testimonials = [
     {
         text: '"This product has completely transformed how I manage my project and deadlines"',
         name: "Sophia Perez",
-        title: "Directior @ Quantum",
+        title: "Director @ Quantum",
         avatarImg: avatar1,
     },
     {
@@ -19,7 +19,7 @@ const testimonials = [
     {
         text: '"This ui looks cool and easy to use, it has saved me my time"',
         name: "Alice Thakuri",
-        title: "Directior @ Hamro",
+        title: "Director @ Hamro",
         avatarImg: avatar3,
     },
     {

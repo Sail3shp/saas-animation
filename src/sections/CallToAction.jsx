@@ -1,13 +1,32 @@
 import starsbg from '../assets/stars.png'
 import gridLines from '../assets/grid-lines.png'
 import Button from '../components/Button'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useRef } from 'react'
 const CallToAction = () => {
+    const sectionRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start']
+    })
+
+
+    const backgroundPositionY = useTransform(scrollYProgress, [0, 1], [-300, 300])
     return (
-        <section className="px-4 py-20 md:py-24">
-            <div
+        <section className="px-4 py-20 md:py-24" ref={sectionRef}>
+            <motion.div
                 className="border border-white/15 py-24 rounded-xl overflow-hidden relative"
                 style={{
+                    backgroundPositionY,
                     backgroundImage: `url(${starsbg})`
+                }}
+                animate={{
+                    backgroundPositionX: ["0px", "1000px"],
+                }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 120,
+                    ease: "linear"
                 }}
             >
                 <div className='absolute inset-0 bg-[rgb(74,32,138)] bg-blend-overlay mask-[radial-gradient(50%_50%_at_50%_35%,black,transparent)]'
@@ -22,7 +41,7 @@ const CallToAction = () => {
                         <Button>Join Waitlist</Button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
         </section>
     )

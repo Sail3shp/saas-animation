@@ -1,6 +1,6 @@
 import Button from "../components/Button"
 import starsbg from '../assets/stars.png'
-import { motion,useMotionValueEvent,useScroll, useTransform } from "motion/react"
+import { motion,useScroll, useTransform } from "motion/react"
 import { useRef } from "react"
 const Hero = () => {
     const sectionRef = useRef(null)
